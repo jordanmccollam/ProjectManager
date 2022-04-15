@@ -23,7 +23,6 @@ const StickyNote = (props) => {
         <img alt="pin" src={redPin} className="pin" />
 
         <div className={`sticky-note-content sticky-note-content-${props.textType}`}>
-          {props.content}
           {props.children}
         </div>
       </div>
@@ -37,7 +36,6 @@ StickyNote.propTypes = {
     PropTypes.element
   ]),
   className: PropTypes.string,
-  content: PropTypes.string,
   textType: PropTypes.oneOf([
     'marker',
     'text',
@@ -47,8 +45,8 @@ StickyNote.propTypes = {
 
 StickyNote.defaultProps = {
   className: "",
-  content: "_________",
-  textType: "text"
+  textType: "text",
+  children: "_____"
 }
 
 export default StickyNote;
