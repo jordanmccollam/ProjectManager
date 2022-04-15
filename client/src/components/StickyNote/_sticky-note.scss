@@ -1,0 +1,45 @@
+@import "../../sass/variables";
+
+.sticky-note {
+    &-images {
+        position: relative;
+        width: 20em;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+        }
+
+        .pin {
+            position: absolute;
+            left: 0;
+            top: -.5em;
+        }
+
+        .sticky-note-content {
+            position: absolute;
+            top: 1.5em;
+            font-size: $text-03;
+            width: 95%;
+            height: 7em;
+            word-wrap: break-word;
+            overflow: scroll;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &-text {
+                font-family: $font-text;
+                // font-weight: bold;
+            }
+            &-marker {
+                font-family: $font-marker;
+            }
+            &-pencil {
+                font-family: $font-pencil;
+                font-weight: bold;
+            }
+        }
+    }
+}

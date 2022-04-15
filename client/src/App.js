@@ -55,7 +55,7 @@ function App() {
     <div className="App">
       <Container fluid>
         <Row className="full">
-          <Col>
+          <Col className="p-0">
       
             {user ? (
               dbUser ? (
@@ -75,7 +75,7 @@ function App() {
             ) : (
               // LOGGED OUT CONTENT
               <>
-                Logged Out
+                <Screens.Main />
               </>
               // ------------------
             )}

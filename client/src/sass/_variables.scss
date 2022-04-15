@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 /*
  *  Responsive
  */
@@ -119,6 +123,9 @@ $radius: 3px;
 
 $font-primary: "Lato", sans-serif;
 $font-secondary: "Lato", sans-serif;
+$font-text: 'Nunito', sans-serif;
+$font-marker: 'Permanent Marker', cursive;
+$font-pencil: 'Indie Flower', cursive;
 
 $shadow-color: rgba(0,0,0,0.3);
 $shadow: 2px 2px 5px $shadow-color;
