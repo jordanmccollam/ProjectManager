@@ -1,9 +1,10 @@
 @import "../../sass/variables";
 
 .sticky-note {
+    width: 15em;
+    
     &-images {
         position: relative;
-        width: 15em;
         display: flex;
         justify-content: center;
 

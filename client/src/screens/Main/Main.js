@@ -15,15 +15,24 @@ const Main = (props) => {
 	};
 
   return (
-    <div className={`${props.className} ${classnames(classes)}`}>
-      {/* BG */}
+    <Container fluid className={`${props.className} ${classnames(classes)}`}>
       <img alt="bg" src={bg} className="main-bg" />
 
-      {/* CONTENT */}
-      <div className="main-content">
-        <StickyNote textType="text" content="" >My First Sticky Note</StickyNote>
-      </div>
-    </div>
+      <Row className="full">
+        <Col className="custom-col">
+          <StickyNote textType="text">jaskdjkasd</StickyNote>
+          <StickyNote textType="text">sdaklskd</StickyNote>
+          <StickyNote textType="text">asdklaskd</StickyNote>
+        </Col>
+        <Col className="custom-col">
+          <StickyNote textType="marker">laskda</StickyNote>
+        </Col>
+        <Col className="custom-col">
+          <StickyNote textType="pencil">as,dalskdlaskdlkasldklaskdlaksdlkalsdklaskdlakdlaksd</StickyNote>
+          <StickyNote textType="pencil">aksdjaksjdkajd</StickyNote>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
