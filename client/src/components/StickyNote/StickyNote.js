@@ -20,7 +20,7 @@ const StickyNote = (props) => {
     <div className={`${props.className} ${classnames(classes)} pb-3`}>
       <div className="sticky-note-images">
         <img alt="sticky note" src={yellowStickyNote} />
-        <img alt="pin" src={redPin} className="pin" />
+        <div className="pin" ></div>
 
         <div className={`sticky-note-content sticky-note-content-${props.textType}`}>
           {props.children}

@@ -16,7 +16,6 @@ const Main = (props) => {
 
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
-      <img alt="bg" src={bg} className="main-bg" />
       <div className="main-content">
         <CustomCol title="To do" >
           <StickyNote>Do Dishes</StickyNote>

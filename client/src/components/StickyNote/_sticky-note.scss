@@ -14,8 +14,10 @@
 
         .pin {
             position: absolute;
-            left: 0;
-            top: -.5em;
+            width: 3em;
+            height: 3em;
+            cursor: pointer;
+            z-index: 9;
         }
 
         .sticky-note-content {
