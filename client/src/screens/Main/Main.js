@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import classnames from "classnames"
 import { Container, Row, Col } from 'react-bootstrap'
-import { Card, StickyNote } from '../../components';
+import { Card, StickyNote, CustomCol } from '../../components';
 import bg from '../../assets/quarkBoardBG.png';
 
 import './_main.scss';
@@ -15,24 +15,21 @@ const Main = (props) => {
 	};
 
   return (
-    <Container fluid className={`${props.className} ${classnames(classes)}`}>
+    <div className={`${props.className} ${classnames(classes)}`}>
       <img alt="bg" src={bg} className="main-bg" />
-
-      <Row className="full">
-        <Col className="custom-col">
-          <StickyNote textType="text">jaskdjkasd</StickyNote>
-          <StickyNote textType="text">sdaklskd</StickyNote>
-          <StickyNote textType="text">asdklaskd</StickyNote>
-        </Col>
-        <Col className="custom-col">
-          <StickyNote textType="marker">laskda</StickyNote>
-        </Col>
-        <Col className="custom-col">
-          <StickyNote textType="pencil">as,dalskdlaskdlkasldklaskdlaksdlkalsdklaskdlakdlaksd</StickyNote>
-          <StickyNote textType="pencil">aksdjaksjdkajd</StickyNote>
-        </Col>
-      </Row>
-    </Container>
+      <div className="main-content">
+        <CustomCol title="To do" >
+          <StickyNote>Do Dishes</StickyNote>
+          <StickyNote>Do Dishes</StickyNote>
+          <StickyNote>Do Dishes</StickyNote>
+          <StickyNote>Do Dishes</StickyNote>
+        </CustomCol>
+        <CustomCol title="In progress" ></CustomCol>
+        <CustomCol title="Done" ></CustomCol>
+        <CustomCol title="Ideas" ></CustomCol>
+        <CustomCol title="Other" ></CustomCol>
+      </div>
+    </div>
   )
 }
 
