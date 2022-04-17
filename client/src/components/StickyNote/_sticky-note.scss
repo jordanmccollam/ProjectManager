@@ -1,7 +1,7 @@
 @import "../../sass/variables";
 
 .sticky-note {
-    width: 15em;
+    width: 100%;
     
     &-images {
         position: relative;
@@ -9,7 +9,7 @@
         justify-content: center;
 
         img {
-            width: 100%;
+            width: 90%;
         }
 
         .pin {
