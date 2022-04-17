@@ -9,24 +9,44 @@ import './_main.scss';
 
 const logger = "Main:: ";
 
+const testSections = [
+  {
+    title: "To do",
+    notes: [{content: "Do dishes"}, {content: "Do more dishes"}, {content: "Do so many dishes it's unbelievable. The world has never seen so many dishes done!"}]
+  },
+  {
+    title: "In progress",
+    notes: [{content: "Not doing dishes"}]
+  },
+  {
+    title: "Done",
+    notes: [{content: "Nothing"}]
+  }
+]
+
 const Main = (props) => {
+  const [sections, setSections] = useState(testSections);
   let classes = {
 		[`main`]: true
 	};
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
       <div className="main-content">
-        <CustomCol title="To do" >
-          <StickyNote>Do Dishes</StickyNote>
-          <StickyNote>Do Dishes</StickyNote>
-          <StickyNote>Do Dishes</StickyNote>
-          <StickyNote>Do Dishes</StickyNote>
+        {sections.map((section, s) => (
+          <CustomCol key={`section-${s}`} title={section.title} >
+            {section.notes.map((note, n) => (
+              <StickyNote key={`note-${n}`} >{note.content}</StickyNote>
+            ))}
+          </CustomCol>
+        ))}
+        <CustomCol title="Add Section" type="utility" >
+          
         </CustomCol>
-        <CustomCol title="In progress" ></CustomCol>
-        <CustomCol title="Done" ></CustomCol>
-        <CustomCol title="Ideas" ></CustomCol>
-        <CustomCol title="Other" ></CustomCol>
       </div>
     </div>
   )

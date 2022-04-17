@@ -8,28 +8,16 @@ import './_custom-col.scss';
 const logger = "CustomCol:: ";
 
 const CustomCol = (props) => {
-  const [isEmpty, setIsEmpty] = useState(true);
   let classes = {
 		[`custom-col`]: true,
-		[`custom-col-empty`]: isEmpty,
+		[`custom-col-${props.type}`]: true,
 	};
-
-  const RenderContent = () => {
-    if (props.children == null && !isEmpty) {
-      setIsEmpty(true);
-    } 
-    else if (props.children != null && isEmpty) {
-      setIsEmpty(false);
-    }
-
-    return (props.children);
-  }
 
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
       <h4 className="py-3 pl-4">{props.title}</h4>
       <div className="custom-col-content">
-        {RenderContent()}
+        {props.children}
       </div>
     </div>
   )
@@ -41,12 +29,17 @@ CustomCol.propTypes = {
     PropTypes.element
   ]),
   className: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  type: PropTypes.oneOf([
+    "default",
+    "utility"
+  ])
 }
 
 CustomCol.defaultProps = {
   className: "",
-  title: "To do"
+  title: "To do",
+  type: "default"
 }
 
 export default CustomCol;
