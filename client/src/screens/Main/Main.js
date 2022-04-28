@@ -24,6 +24,11 @@ const testSections = [
   }
 ]
 
+const defaultNewSection = {
+  title: "New Section",
+  notes: []
+}
+
 const Main = (props) => {
   const [sections, setSections] = useState(testSections);
   const [isAddingSection, setIsAddingSection] = useState(false);
@@ -36,8 +41,14 @@ const Main = (props) => {
   }, [])
 
   const onAddSection = () => {
-    console.log(isAddingSection ? "Done with section!" : "Add section!"); // for testing
-    setIsAddingSection(!isAddingSection);
+    setIsAddingSection(true);
+  }
+
+  const doneEditingSection = () => {
+    setIsAddingSection(false);
+    var newSectionsArray = [...sections];
+    newSectionsArray.push(defaultNewSection);
+    setSections(newSectionsArray);
   }
 
   return (
@@ -52,7 +63,7 @@ const Main = (props) => {
         ))}
         <div>
           {isAddingSection ? (
-            <CustomCol title={"___"} type="utility" event={onAddSection} >
+            <CustomCol title={"___"} type="utility" event={doneEditingSection} >
 
             </CustomCol>
           ) : (
