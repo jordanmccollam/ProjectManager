@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import classnames from "classnames"
-import { Container, Row, Col } from 'react-bootstrap'
-import { Card, StickyNote, CustomCol } from '../../components';
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Card, CustomCol } from '../../components';
 import bg from '../../assets/quarkBoardBG.png';
 
 import './_main.scss';
@@ -39,14 +39,17 @@ const Main = (props) => {
       <div className="main-content">
         {sections.map((section, s) => (
           <CustomCol key={`section-${s}`} title={section.title} >
-            {section.notes.map((note, n) => (
-              <StickyNote key={`note-${n}`} >{note.content}</StickyNote>
-            ))}
+            {/* {section.notes.map((note, n) => (
+              <div key={`note-${n}`} >{note.content}</div>
+            ))} */}
           </CustomCol>
         ))}
-        <CustomCol title="Add Section" type="utility" >
-          
-        </CustomCol>
+        <div>
+          <div className="add-section-btn py-3">
+            <h4 className="pl-4">Add Section</h4> 
+            <h4 className="pr-4">+</h4>
+          </div>
+        </div>
       </div>
     </div>
   )

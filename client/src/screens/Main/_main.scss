@@ -31,10 +31,35 @@
         display: flex;
         justify-content: start;
 
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: none;
 
         // background: $grey-50;
         border-radius: $radius;
+    }
+
+    .add-section-btn {
+        // border: 2px solid blue; // for testing
+        background-color: transparent;
+        width: 275px;
+
+        display: flex;
+        justify-content: space-between;
+
+        border-radius: $radius;
+
+        h4 {
+            color: rgba($light, .4);
+        }
+
+        &:hover {
+            background-color: rgba($light, .05);
+            transition: $transition;
+            cursor: pointer;
+            h4 {
+                color: $light;
+                transition: $transition;
+            }
+        }
     }
 }

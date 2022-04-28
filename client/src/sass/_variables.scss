@@ -109,7 +109,9 @@ $grey-00: #36404c;
  *  BOOTSTRAP OVERRIDES
  */
 
-$primary: #197d67;
+$primary-10: #FFCF42;
+$primary: #FDE18D;
+
 $success: #197d67;
 $light: #efefef;
 
@@ -119,10 +121,10 @@ $light: #efefef;
 $bg: #eceaea;
 $text-color: #000000;
 
-$radius: 1em;
+$radius: 5px;
 
-$font-primary: "Lato", sans-serif;
-$font-secondary: "Lato", sans-serif;
+$font-primary: "Nunito", sans-serif;
+$font-secondary: "Nunito", sans-serif;
 $font-text: 'Nunito', sans-serif;
 $font-marker: 'Permanent Marker', cursive;
 $font-pencil: 'Indie Flower', cursive;
@@ -130,3 +132,5 @@ $font-pencil: 'Indie Flower', cursive;
 $shadow-color: rgba(0,0,0,0.3);
 $shadow: 2px 2px 5px $shadow-color;
 $shadow-hover: 3px 3px 16px rgba(0,0,0,0.05);
+
+$transition: .4s;
