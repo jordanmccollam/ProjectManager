@@ -26,6 +26,7 @@ const testSections = [
 
 const Main = (props) => {
   const [sections, setSections] = useState(testSections);
+  const [isAddingSection, setIsAddingSection] = useState(false);
   let classes = {
 		[`main`]: true
 	};
@@ -33,6 +34,11 @@ const Main = (props) => {
   useEffect(() => {
 
   }, [])
+
+  const onAddSection = () => {
+    console.log(isAddingSection ? "Done with section!" : "Add section!"); // for testing
+    setIsAddingSection(!isAddingSection);
+  }
 
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
@@ -45,10 +51,16 @@ const Main = (props) => {
           </CustomCol>
         ))}
         <div>
-          <div className="add-section-btn py-3">
-            <h4 className="pl-4">Add Section</h4> 
-            <h4 className="pr-4">+</h4>
-          </div>
+          {isAddingSection ? (
+            <CustomCol title={"___"} type="utility" event={onAddSection} >
+
+            </CustomCol>
+          ) : (
+            <div className="add-section-btn py-3 px-4" onClick={onAddSection}>
+              <h4>Add Section</h4> 
+              <h4>+</h4>
+            </div>
+          )}
         </div>
       </div>
     </div>

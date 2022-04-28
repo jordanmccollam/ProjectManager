@@ -9,6 +9,28 @@
     overflow-y: auto;
     border-radius: $radius;
 
+    &-header {
+        display: flex;
+        justify-content: space-between;
+
+        .header-btn {
+            width: 2em;
+            height: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            color: rgba($light, .4);
+
+            &:hover {
+                transition: $transition;
+                cursor: pointer;
+                color: $light;
+                background-color: rgba($light, .05);
+            }
+        }
+    }
+
     &-content {
         height: calc(100% - 5em);
         width: 100%;
