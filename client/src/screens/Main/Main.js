@@ -10,18 +10,18 @@ import './_main.scss';
 const logger = "Main:: ";
 
 const testSections = [
-  {
-    title: "To do",
-    notes: [{content: "Do dishes"}, {content: "Do more dishes"}, {content: "Do so many dishes it's unbelievable. The world has never seen so many dishes done!"}]
-  },
-  {
-    title: "In progress",
-    notes: [{content: "Not doing dishes"}]
-  },
-  {
-    title: "Done",
-    notes: [{content: "Nothing"}]
-  }
+  // {
+  //   title: "To do",
+  //   notes: [{content: "Do dishes"}, {content: "Do more dishes"}, {content: "Do so many dishes it's unbelievable. The world has never seen so many dishes done!"}]
+  // },
+  // {
+  //   title: "In progress",
+  //   notes: [{content: "Not doing dishes"}]
+  // },
+  // {
+  //   title: "Done",
+  //   notes: [{content: "Nothing"}]
+  // }
 ]
 
 const defaultNewSection = {
@@ -31,7 +31,6 @@ const defaultNewSection = {
 
 const Main = (props) => {
   const [sections, setSections] = useState(testSections);
-  const [isAddingSection, setIsAddingSection] = useState(false);
   let classes = {
 		[`main`]: true
 	};
@@ -41,14 +40,12 @@ const Main = (props) => {
   }, [])
 
   const onAddSection = () => {
-    setIsAddingSection(true);
-  }
-
-  const doneEditingSection = () => {
-    setIsAddingSection(false);
+    // Add new section
     var newSectionsArray = [...sections];
     newSectionsArray.push(defaultNewSection);
     setSections(newSectionsArray);
+
+    // TODO: By default, select/edit the section title
   }
 
   return (
@@ -62,16 +59,13 @@ const Main = (props) => {
           </CustomCol>
         ))}
         <div>
-          {isAddingSection ? (
-            <CustomCol title={"___"} type="utility" event={doneEditingSection} >
 
-            </CustomCol>
-          ) : (
-            <div className="add-section-btn py-3 px-4" onClick={onAddSection}>
-              <h4>Add Section</h4> 
-              <h4>+</h4>
-            </div>
-          )}
+          {/* This is more of a button then a section */}
+          {/* When the user clicks it, create a new section and by default: select/edit title of new section */}
+          <div className="add-section-btn py-3 px-4" onClick={onAddSection}>
+            <h4>Add Section</h4> 
+            <h4>+</h4>
+          </div>
         </div>
       </div>
     </div>
