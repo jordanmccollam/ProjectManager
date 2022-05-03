@@ -31,6 +31,7 @@ const defaultNewSection = {
 
 const Main = (props) => {
   const [sections, setSections] = useState(testSections);
+
   let classes = {
 		[`main`]: true
 	};
