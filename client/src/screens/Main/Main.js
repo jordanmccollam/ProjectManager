@@ -26,11 +26,13 @@ const testSections = [
 
 const defaultNewSection = {
   title: "New Section",
-  notes: []
+  notes: [],
+  id: "o148972343u"
 }
 
 const Main = (props) => {
   const [sections, setSections] = useState(testSections);
+  const [editing, setEditing] = useState(null);
 
   let classes = {
 		[`main`]: true
@@ -43,17 +45,24 @@ const Main = (props) => {
   const onAddSection = () => {
     // Add new section
     var newSectionsArray = [...sections];
-    newSectionsArray.push(defaultNewSection);
+    newSectionsArray.push({...defaultNewSection, id: (sections.length + 1).toString()});
     setSections(newSectionsArray);
 
     // TODO: By default, select/edit the section title
+  }
+
+  const onUpdateSection = (oldSection, newSection) => {
+    let _sections = [...sections];
+    let index = _sections.findIndex(s => s.id == oldSection.id);
+    _sections[index] = newSection;
+    setSections(_sections);
   }
 
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
       <div className="main-content">
         {sections.map((section, s) => (
-          <CustomCol key={`section-${s}`} title={section.title} >
+          <CustomCol key={`section-${s}`} {...section} onUpdate={onUpdateSection} >
             {/* {section.notes.map((note, n) => (
               <div key={`note-${n}`} >{note.content}</div>
             ))} */}

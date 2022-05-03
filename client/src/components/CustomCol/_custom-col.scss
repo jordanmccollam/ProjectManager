@@ -29,6 +29,25 @@
                 background-color: rgba($light, .05);
             }
         }
+
+        h4 {
+            width: calc(100% - 2em);
+
+            &:hover {
+                transition: $transition;
+                cursor: pointer;
+            }
+
+            // Disabled user select (highlighting)
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        input {
+            width: calc(95% - 2em);
+        }
     }
 
     &-content {
