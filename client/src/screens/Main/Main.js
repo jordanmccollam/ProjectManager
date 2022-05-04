@@ -25,7 +25,7 @@ const testSections = [
 ]
 
 const defaultNewSection = {
-  title: "New Section",
+  title: "",
   notes: [],
   id: "o148972343u"
 }

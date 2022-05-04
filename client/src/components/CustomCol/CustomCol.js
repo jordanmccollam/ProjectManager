@@ -31,7 +31,29 @@ const CustomCol = (props) => {
     titleInput?.focus();
   })
 
-  const onDoubleClick = (e) => {    
+  useEffect(() => {
+    if (props.title.trim() == "") {
+      console.log("Confirmed");
+      onToggleEdit();
+    }
+  }, [])
+
+  const onDoubleClick = () => {    
+    onToggleEdit();
+  }
+
+  const onChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const onBlur = () => {
+    onToggleEdit();
+  }
+
+  const onToggleEdit = () => {
     if (isEditing) { // Done editing / already editing
       // update saved data with new (currently temporary) changes 
       props.onUpdate(storedValues, values);
@@ -46,13 +68,6 @@ const CustomCol = (props) => {
     setIsEditing(!isEditing);
   }
 
-  const onChange = (e) => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value
-    })
-  }
-
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
       <div className="py-3 px-4 custom-col-header">
@@ -64,9 +79,10 @@ const CustomCol = (props) => {
             value={values.title} 
             name="title"
             onChange={onChange}
+            onBlur={onBlur}
           />
         ) : (
-          <h4 onDoubleClick={onDoubleClick}>{props.title}</h4>
+          <h4 onDoubleClick={onDoubleClick}>{props.title.trim() == "" ? "Unnamed" : props.title}</h4>
         )}
         <div className="header-btn" onClick={() => {
           props.event();
