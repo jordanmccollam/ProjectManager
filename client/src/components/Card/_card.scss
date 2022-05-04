@@ -3,4 +3,10 @@
 .card {
     width: calc(100% - 3em);
     border: none; // cancel bootstrap .card border
+    margin-bottom: $space-02;
+
+    .content {
+        // border: 1px solid red; // for testing
+        padding: .6em .4em;
+    }
 }
