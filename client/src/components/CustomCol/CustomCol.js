@@ -68,6 +68,12 @@ const CustomCol = (props) => {
     setIsEditing(!isEditing);
   }
 
+  const onKeyPress = (e) => {
+    if(e.key === 'Enter'){
+      onToggleEdit();
+    }
+  }
+
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
       <div className="py-3 px-4 custom-col-header">
@@ -80,6 +86,7 @@ const CustomCol = (props) => {
             name="title"
             onChange={onChange}
             onBlur={onBlur}
+            onKeyPress={onKeyPress}
           />
         ) : (
           <h4 onDoubleClick={onDoubleClick}>{props.title.trim() == "" ? "Unnamed" : props.title}</h4>
