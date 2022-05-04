@@ -1,7 +1,7 @@
-import CustomCol from "./CustomCol/CustomCol";
+import Section from "./Section/Section";
 
 
 export {
-  CustomCol,
+  Section,
     
 }

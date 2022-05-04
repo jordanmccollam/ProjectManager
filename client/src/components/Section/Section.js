@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import classnames from "classnames"
 import { Row, Col, Button, Form } from 'react-bootstrap';
 
-import './_custom-col.scss';
+import './_section.scss';
 
-const logger = "CustomCol:: ";
+const logger = "Section:: ";
 
-const CustomCol = (props) => {
+const Section = (props) => {
   let titleInput = null;
 
   const [isEditing, setIsEditing] = useState(false);
@@ -23,8 +23,8 @@ const CustomCol = (props) => {
   })
 
   let classes = {
-		[`custom-col`]: true,
-		[`custom-col-${props.type}`]: true,
+		[`section`]: true,
+		[`section-${props.type}`]: true,
 	};
 
   useEffect(()=>{
@@ -76,7 +76,7 @@ const CustomCol = (props) => {
 
   return (
     <div className={`${props.className} ${classnames(classes)}`}>
-      <div className="py-3 px-4 custom-col-header">
+      <div className="py-3 px-4 section-header">
         {isEditing ? (
           <input 
             ref={(this_input) => { titleInput = this_input; }} 
@@ -95,14 +95,14 @@ const CustomCol = (props) => {
           props.event();
         }} >+</div>
       </div>
-      <div className="custom-col-content">
+      <div className="section-content">
         {props.children}
       </div>
     </div>
   )
 }
 
-CustomCol.propTypes = {
+Section.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
@@ -117,18 +117,18 @@ CustomCol.propTypes = {
   onUpdate: PropTypes.func
 }
 
-CustomCol.defaultProps = {
+Section.defaultProps = {
   className: "",
   title: "To do",
   type: "default",
   event: () => {
-    console.log("CustomCol: No event func assigned");
+    console.log("Section: No event func assigned");
   },
   onUpdate: () => {
-    console.log("CustomCol: No onUpdate func assigned")
+    console.log("Section: No onUpdate func assigned")
   }
 }
 
-export default CustomCol;
+export default Section;
 
 
