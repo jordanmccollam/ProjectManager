@@ -66,9 +66,7 @@ const Main = (props) => {
       <div className="main-content">
         {sections.map((section, s) => (
           <Section key={`section-${s}`} {...section} onUpdate={onUpdateSection} >
-            {/* {section.notes.map((note, n) => (
-              <div key={`note-${n}`} >{note.content}</div>
-            ))} */}
+            <Card></Card>
           </Section>
         ))}
         <div>

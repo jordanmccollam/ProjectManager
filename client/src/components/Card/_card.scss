@@ -1,0 +1,6 @@
+@import "../../sass/variables";
+
+.card {
+    width: calc(100% - 3em);
+    border: none; // cancel bootstrap .card border
+}

@@ -1,6 +1,7 @@
 @import "variables";
 
-input {
+input,
+textarea {
     border-radius: $radius;
     border: none;
     padding: .6em .4em;
